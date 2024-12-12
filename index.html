@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .course-player {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .player-header {
+            background-color: #0000FF;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .player-header h1 {
+            font-size: 2rem;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .video-section {
+            flex: 2;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+        }
+
+        .playlist {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-left: 2px solid #ddd;
+        }
+
+        .playlist h2 {
+            margin-bottom: 10px;
+        }
+
+        .playlist ul {
+            list-style: none;
+        }
+
+        .video-item {
+            padding: 10px 15px;
+            background-color: #0000FF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .video-item:hover {
+            background-color: #0000FF;
+        }
+
+        .video-item.active {
+            background-color: #0000FF;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .playlist {
+                border-left: none;
+                border-top: 2px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="course-player">
+        <header class="player-header">
+            <h1> AWS Course </h1>
+        </header>
+
+        <main class="content">
+            <section class="video-section">
+                <iframe id="video-player" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+
+            </section>
+
+            <section class="playlist">
+                <h2>AWS Course Playlist</h2>
+                <ul>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1yEriJXmZUSZeeaHwa2oDw_1UOPEQdadA/preview">Cloud Concepts Part (1)</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1xCcCLpaBvAEpQAiPiog2YSzrI8-80h65/preview">Cloud Concepts Part (2)</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1rHS8u1SBl-CJHXUPymDcrDcPBjvNcAq-/preview">Cloud Security Part (1)</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1VO5Tnl_Imdxt1d8Ak_M94cvv1fgkYTnU/preview">Cloud Security Part (2)</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1ft2FaKd9XVw5Xh65pUGIrharmgfY-7IU/preview">Compute</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/16oJeyD-sVirLzqAfXQfCesYV4ek-WNlZ/preview">Storage Database</li>
+                    <li class="video-item" data-src="https://drive.google.com/file/d/1moa8B2JrBf6REzIrQI39X7bE_UvjHSUB/preview">Cloud Architecture</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const videoItems = document.querySelectorAll('.video-item');
+
+        videoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const videoSource = item.getAttribute('data-src');
+                videoPlayer.src = videoSource;
+
+                videoItems.forEach(btn => btn.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (videoItems.length > 0) {
+                videoItems[0].click();
+            }
+        });
+ document.addEventListener('keydown', function (e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+    </script>
+</body>
+</html>
