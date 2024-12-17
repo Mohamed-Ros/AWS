@@ -1,29 +1,40 @@
-AWS Course Playlist
-This project is an interactive course playlist built for the AWS Course using HTML, CSS, and JavaScript. It provides a simple and user-friendly interface for users to watch AWS-related content with an embedded video player and a list of course videos.
+# AWS Course Playlist
 
-Features
-Embedded Video Player: Users can watch videos directly on the page.
-AWS Course Playlist: A list of AWS course topics with videos in Arabic.
-Logo Overlay: The logo is overlaid on the top of the background image.
-Responsive Design: The layout adapts for different screen sizes.
-Interactive Playlist: Clicking on a playlist item updates the video player with the corresponding video.
-Prevent Right-Click and Inspect Tools: Protection against right-click and browser developer tools.
-Structure
-1. HTML:
-The main structure of the page contains:
-A background image representing the course content.
-An overlay logo to display branding.
-A video player that shows course videos.
-A playlist with a list of video links.
-Footer displaying copyright information.
-2. CSS:
-Styling is provided to:
-Give the page a clean, modern look with rounded corners, shadow effects, and soft colors.
-Ensure responsiveness for different screen sizes using media queries.
-Provide hover effects for playlist items to improve interactivity.
-3. JavaScript:
-Video Player: Handles loading and changing videos when playlist items are clicked.
-Event Listeners:
-Click: Changes the video source based on the clicked playlist item.
-Keyboard and Context Menu Restrictions: Prevents the user from inspecting or accessing browser developer tools (e.g., F12 or right-click).
-Auto-Start: Automatically starts the first video when the page is loaded.
+This project is designed to display a collection of AWS course videos in Arabic, with a simple, responsive UI using HTML, CSS, and JavaScript. The page contains a video player and a playlist of videos hosted on Google Drive. Users can easily navigate through the courses by clicking on the playlist items, and the video player will load the selected video.
+
+## Features
+
+- **Video Player**: Displays course videos in a responsive player.
+- **Playlist**: List of AWS course videos, including:
+  - Cloud Concepts Part (1) In Arabic
+  - Cloud Concepts Part (2) In Arabic
+  - Cloud Security Part (1) In Arabic
+  - Cloud Security Part (2) In Arabic
+  - Compute In Arabic
+  - Storage Database In Arabic
+  - Cloud Architecture In Arabic
+- **Responsive Design**: The page adjusts to fit different screen sizes, making it user-friendly on both desktop and mobile devices.
+- **Video Protection**: Prevents users from right-clicking on the page and accessing developer tools (using custom JavaScript).
+
+## Technologies Used
+
+- HTML5
+- CSS3 (Flexbox)
+- JavaScript
+
+## How to Use
+
+1. Clone the repository or download the files.
+2. Open the `index.html` file in your browser.
+3. Click on any video in the playlist to play it in the video player.
+4. The page will automatically load the selected video.
+
+## Customization
+
+You can easily add or remove videos from the playlist by updating the list in the HTML file. Each video is represented by a `li` element with a `data-src` attribute pointing to the video URL.
+
+To add a new video, simply copy one of the existing `li` elements and modify the `data-src` and text as needed.
+
+Example:
+```html
+<li class="video-item" data-src="new_video_link_here">New Course Title</li>
