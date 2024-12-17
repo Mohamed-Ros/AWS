@@ -29,12 +29,3 @@ This project is designed to display a collection of AWS course videos in Arabic,
 3. Click on any video in the playlist to play it in the video player.
 4. The page will automatically load the selected video.
 
-## Customization
-
-You can easily add or remove videos from the playlist by updating the list in the HTML file. Each video is represented by a `li` element with a `data-src` attribute pointing to the video URL.
-
-To add a new video, simply copy one of the existing `li` elements and modify the `data-src` and text as needed.
-
-Example:
-```html
-<li class="video-item" data-src="new_video_link_here">New Course Title</li>
